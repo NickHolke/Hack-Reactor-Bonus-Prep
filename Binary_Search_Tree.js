@@ -18,6 +18,18 @@ BinaryTree.prototype.addValue = function(num) {
     }
 }
 
+TreeNode.prototype.search = function(num) {
+    if (this.val == num) {
+        return "Found";
+    } else if (this.left === null && this.right === null) {
+        return "Not found";
+    } else if (num < this.val) {
+        return this.left.search(num)
+    } else {
+        return this.right.search(num)
+    }
+}
+
 TreeNode.prototype.addNode = function(node) {
     if (node.val < this.val) {
         if (this.left === null) {
